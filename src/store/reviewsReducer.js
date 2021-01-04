@@ -30,6 +30,7 @@ const reducer = (state = initState, action) => {
 
     switch (action.type) {
         case 'GET_REVIEWS':
+            newState.initReviews = action.payload;
             break;
 
         default:

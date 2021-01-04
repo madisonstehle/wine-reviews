@@ -1,10 +1,12 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store/index.js';
 
 import Table from './components/table.js';
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store} className="App">
       <header className="App-header">
         <h1>
           Wine Reviews
@@ -12,7 +14,7 @@ function App() {
       </header>
 
       <Table />
-    </div>
+    </Provider>
   );
 }
 
