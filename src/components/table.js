@@ -5,9 +5,12 @@ import { connect } from 'react-redux';
 import * as actions from '../store/actions.js';
 
 function ReviewTable(props) {
+    const { getReviews } = props;
+
     useEffect( () => {
-        actions.getReviews();
-    }, [props.initReviews]);
+        console.log('hello useEffect')
+        getReviews();
+    }, []);
 
     let rows = props.initReviews.map((review, idx) => {
         const { title, variety, winery, points, price, description} = review;

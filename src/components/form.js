@@ -4,16 +4,16 @@ import {connect} from 'react-redux';
 import * as actions from '../store/actions.js';
 
 function Form({addReview}) {
-    const defaults = {
-        country: '',
-        designation: '',
-        points: '',
-        price: '',
-        tasterName: '',
-        title: '',
-        variety: '',
-        winery: ''
-    }
+    // const defaults = {
+    //     country: '',
+    //     designation: '',
+    //     points: '',
+    //     price: '',
+    //     tasterName: '',
+    //     title: '',
+    //     variety: '',
+    //     winery: ''
+    // }
 
     return (
         <form>
