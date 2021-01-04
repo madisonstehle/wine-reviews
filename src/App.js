@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import store from './store/index.js';
 
 import Table from './components/table.js';
+import Form from './components/form.js';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       </header>
 
       <Table />
-      
+      <Form />
+
     </Provider>
   );
 }

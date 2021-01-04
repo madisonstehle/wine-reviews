@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getReviews = () => async dispatch => {
     let results = await axios.get('https://lightninglaw.azurewebsites.net/api/reviews');
-    dispatch(renderReviews(results.data))
+    dispatch(renderReviews(results.body))
   }
 
 const renderReviews = payload => {
