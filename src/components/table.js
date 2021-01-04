@@ -18,9 +18,16 @@ function ReviewTable(props) {
     let renderingArr = items ? items : props.initReviews;
 
     // TODO: dedup countries list from data
-    // let countries = renderingArr.filter((review, position) => {
-    //         return 
-    // })
+    // const customFilter = ({ fieldName, filter, onChange}) => { 
+    //     return (
+    //         <select
+    //             onChange={(e) => onChange(e.target.value)}
+    //             value={filter ? filter.value : 'all'}>
+    //                 <option></option>
+    //         </select>
+    //     )
+    // }
+
 
     // TODO: integrating filtering functionality
     // let countrySelect = renderingArr.map((review, idx) => {
@@ -50,16 +57,17 @@ function ReviewTable(props) {
 
     return (
         <div>
-            {/* <div> */}
+            <div>
                 {/* TODO: Allow Table Filtering through drop down */}
-                {/* <select> */}
+                {/* <select */}
+                    {/* onChange={(e) => {console.log(e.target.value)}}> */}
                     {/* <option */}
                         {/* value='' */}
                         {/* >--Select a Country-- */}
                     {/* </option> */}
                     {/* { countrySelect } */}
                 {/* </select> */}
-            {/* </div> */}
+            </div>
             <table>
                 <thead>
                     <tr>
