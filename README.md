@@ -3,8 +3,8 @@
 
 
 ### Application Links
-- [Deployed Site]()
-- [Github Respository]()
+- [Deployed Site](https://wine-reviews.netlify.app/)
+- [Github Respository](https://github.com/madisonstehle/wine-reviews)
 
 
 ### With More Time...
