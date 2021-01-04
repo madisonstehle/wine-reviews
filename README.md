@@ -11,7 +11,7 @@
 
 If given longer to implement this application, I would:
 
-1. Complete the "filter by countries of origin" feature. The current drop down (commented out in the code) has no functionality aside from displaying a list of countries associated with the listed wine reviews. I would likely need to deduplicate the country list. Judging by the wireframe, I would also need to do a mathmatical operation to determine the percentage of wines reviewed for each country. Completing this feature would also mean adjusting the "total number of reviews" number.
+1. Complete the "filter by countries of origin" feature. The current drop down (commented out in the code) has no functionality aside from displaying a list of countries associated with the listed wine reviews. I would likely need to deduplicate the country list. Judging by the wireframe, I would also need to do a mathmatical operation to determine the percentage of wines reviewed for each country. I would create a state variable to do this. Completing this feature would also mean adjusting the "total number of reviews" number. 
 2. Add a feature to view and filter number of results viewed on the table page, and a pagination feature for the table as displayed in the wireframe. 
 3. More effectively style the application. The responsiveness could improve. I would better consolidate the CSS styling into the _styles_ directory, and modularize the parts there. I would also implement a CSS reset file to give a clean baseline to work from. 
 4. Allow the submitted form data to persist through reload by using a post route with axios.
