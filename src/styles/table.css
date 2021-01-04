@@ -2,11 +2,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     box-sizing: border-box;
-    border: black 1px solid;
 }
 
 thead {
     width: 100%;
+}
+
+thead tr {
+    border: none;
 }
 
 th {
@@ -26,7 +29,6 @@ button {
     background-color: transparent;
     border: 0;
     font-size: 14px;
-    font-weight: bold;
 }
 
 button:hover {

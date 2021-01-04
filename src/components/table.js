@@ -2,18 +2,20 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from '../store/actions.js';
+import useSortData from '../hooks/useSortData.js';
 
 import '../styles/table.css';
 
 function ReviewTable(props) {
-    const { getReviews } = props;
+    const { items, requestSort } = useSortData(props.initReviews);
 
     useEffect( () => {
-        console.log('hello useEffect')
-        getReviews();
-    }, []);
+        actions.getReviews();
+    }, [items, props.initReviews]);
 
-    let rows = props.initReviews.map((review, idx) => {
+    let renderingArr = items ? items : props.initReviews;
+
+    let rows = renderingArr.map((review, idx) => {
         const { title, variety, winery, points, price, designation} = review;
         return (
             <tr key={idx}>
@@ -21,7 +23,7 @@ function ReviewTable(props) {
                 <td>{variety}</td>
                 <td>{winery}</td>
                 <td>{points}</td>
-                <td>{price}</td>
+                <td>{price ? `$${price}.00` : '$00.00'}</td>
                 <td>{designation}</td>
             </tr>
         )
@@ -32,22 +34,46 @@ function ReviewTable(props) {
             <thead>
                 <tr>
                     <th>
-                        Title
+                        <button
+                            type='button'
+                            onClick={ () => requestSort('title')}>
+                            TITLE
+                        </button>
                     </th>
                     <th>
-                        Variety
+                        <button
+                            type='button'
+                            onClick={ () => requestSort('variety')}>
+                            VARIETY
+                        </button>
                     </th>
                     <th>
-                        Winery
+                        <button
+                            type='button'
+                            onClick={ () => requestSort('winery')}>
+                            WINERY
+                        </button>                        
                     </th>
                     <th>
-                        Points
+                        <button
+                            type='button'
+                            onClick={ () => requestSort('points')}>
+                            POINTS
+                        </button>   
                     </th>
                     <th>
-                        Price
+                        <button
+                            type='button'
+                            onClick={ () => requestSort('price')}>
+                            PRICE
+                        </button>  
                     </th>
                     <th>
-                        Designation
+                        <button
+                            type='button'
+                            onClick={ () => requestSort('designation')}>
+                            DESIGNATION
+                        </button>  
                     </th>
                 </tr>
             </thead>
