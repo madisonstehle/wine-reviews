@@ -3,20 +3,38 @@ import {connect} from 'react-redux';
 
 import * as actions from '../store/actions.js';
 
+import useForm from '../hooks/useForm.js';
+
 function Form({addReview}) {
-    // const defaults = {
-    //     country: '',
-    //     designation: '',
-    //     points: '',
-    //     price: '',
-    //     tasterName: '',
-    //     title: '',
-    //     variety: '',
-    //     winery: ''
-    // }
+    const defaults = {
+        country: '',
+        designation: '',
+        points: '',
+        price: '',
+        tasterName: '',
+        title: '',
+        variety: '',
+        winery: ''
+    }
+
+    const { handleChange, handleSubmit } = useForm(defaults);
+
+    function submit(e) {
+        e.preventDefault();
+        handleSubmit(addReview);
+        e.target.reset();
+    }
+
+    function change(e) {
+        handleChange(e.target.id, e.target.value);
+    }
 
     return (
-        <form>
+        <form 
+            onSubmit={(e) => {
+                submit(e);
+            }}>
+
             <h2>Add a Review</h2>
 
             <div>
@@ -25,7 +43,7 @@ function Form({addReview}) {
                     id='title'
                     name='title'
                     type='text'
-                    // onChange={}
+                    onChange={change}
                     required
                 />
             </div>
@@ -36,7 +54,7 @@ function Form({addReview}) {
                     id='points'
                     name='points'
                     type='number'
-                    // onChange={}
+                    onChange={change}
                     required
                 />
             </div>
@@ -47,7 +65,7 @@ function Form({addReview}) {
                     id='country'
                     name='country'
                     type='text'
-                    // onChange={}
+                    onChange={change}
                     required
                 />
             </div>
@@ -58,7 +76,7 @@ function Form({addReview}) {
                     id='variety'
                     name='variety'
                     type='text'
-                    // onChange={}
+                    onChange={change}
                     required
                 />
             </div>
@@ -69,8 +87,7 @@ function Form({addReview}) {
                     id='designation'
                     name='designation'
                     type='text'
-                    // onChange={}
-                    required
+                    onChange={change}
                 />
             </div>
 
@@ -80,8 +97,7 @@ function Form({addReview}) {
                     id='price'
                     name='price'
                     type='text'
-                    // onChange={}
-                    required
+                    onChange={change}
                 />
             </div>
 
@@ -91,8 +107,7 @@ function Form({addReview}) {
                     id='winery'
                     name='winery'
                     type='text'
-                    // onChange={}
-                    required
+                    onChange={change}
                 />
             </div>
 
@@ -102,8 +117,7 @@ function Form({addReview}) {
                     id='tasterName'
                     name='tasterName'
                     type='text'
-                    // onChange={}
-                    required
+                    onChange={change}
                 />
             </div>
 

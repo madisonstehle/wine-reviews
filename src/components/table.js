@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-
 import * as actions from '../store/actions.js';
+
+import '../styles/table.css';
 
 function ReviewTable(props) {
     const { getReviews } = props;
@@ -13,7 +14,7 @@ function ReviewTable(props) {
     }, []);
 
     let rows = props.initReviews.map((review, idx) => {
-        const { title, variety, winery, points, price, description} = review;
+        const { title, variety, winery, points, price, designation} = review;
         return (
             <tr key={idx}>
                 <td>{title}</td>
@@ -21,7 +22,7 @@ function ReviewTable(props) {
                 <td>{winery}</td>
                 <td>{points}</td>
                 <td>{price}</td>
-                <td>{description}</td>
+                <td>{designation}</td>
             </tr>
         )
     })
@@ -46,7 +47,7 @@ function ReviewTable(props) {
                         Price
                     </th>
                     <th>
-                        Description
+                        Designation
                     </th>
                 </tr>
             </thead>
@@ -66,6 +67,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, getState) => ({
     getReviews: (data) => dispatch( actions.getReviews(data) ),
+    addReview: (data) => dispatch( actions.addReview(data) )
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewTable);
