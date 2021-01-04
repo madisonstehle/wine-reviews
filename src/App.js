@@ -7,6 +7,7 @@ import Table from './components/table.js';
 function App() {
   return (
     <Provider store={store} className="App">
+
       <header className="App-header">
         <h1>
           Wine Reviews
@@ -14,6 +15,7 @@ function App() {
       </header>
 
       <Table />
+      
     </Provider>
   );
 }

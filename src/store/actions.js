@@ -1,14 +1,13 @@
 import axios from 'axios';
 
-// export const getReviews = () => {
-//     async dispatch => {
-//         let results = await axios.get('https://lightninglaw.azurewebsites.net/api/reviews');
-//         console.log(results.data);
-//         dispatch(renderReviews(results.data));
-//     }
-// }
+export const getReviews = () => async dispatch => {
+    let results = await axios.get('https://lightninglaw.azurewebsites.net/api/reviews');
+    dispatch(renderReviews(results.data))
+  }
 
-export const renderReviews = payload => {
+const renderReviews = payload => {
+    console.log('AXIOS CALL', payload);
+
     return {
         type: 'GET_REVIEWS',
         payload

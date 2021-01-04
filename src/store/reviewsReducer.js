@@ -13,12 +13,12 @@ const initState = {
         },
         {
             country: "Portugal",
-            designation: "Vulk� Bianco",
+            designation: "Things",
             points: 87,
             price: null,
             province: "Sicily & Sardinia",
             tasterName: null,
-            title: "Nicosia 2013 Vulk� Bianco  (Etna)",
+            title: "thing",
             variety: "White Blend",
             winery: "Nicosia"
         },
