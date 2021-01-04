@@ -17,6 +17,20 @@ function Form({addReview}) {
         winery: ''
     }
 
+    const styles = {
+        form: {
+            display: 'flex'
+        },
+        div: {
+            display: 'flex',
+            alignItems: 'center',
+            padding: '5px'
+        },
+        label: {
+            margin: '5px'
+        }
+    }
+
     const { handleChange, handleSubmit } = useForm(defaults);
 
     function submit(e) {
@@ -37,8 +51,8 @@ function Form({addReview}) {
 
             <h2>Add a Review</h2>
 
-            <div>
-                <label>Title</label>
+            <div style={styles.div}>
+                <label style={styles.label}>Title</label>
                 <input
                     id='title'
                     name='title'
@@ -48,8 +62,8 @@ function Form({addReview}) {
                 />
             </div>
 
-            <div>
-                <label>Points</label>
+            <div style={styles.div}>
+                <label style={styles.label}>Points</label>
                 <input
                     id='points'
                     name='points'
@@ -59,8 +73,8 @@ function Form({addReview}) {
                 />
             </div>
 
-            <div>
-                <label>Country</label>
+            <div style={styles.div}>
+                <label style={styles.label}>Country</label>
                 <input
                     id='country'
                     name='country'
@@ -70,8 +84,8 @@ function Form({addReview}) {
                 />
             </div>
 
-            <div>
-                <label>Variety</label>
+            <div style={styles.div}>
+                <label style={styles.label}>Variety</label>
                 <input
                     id='variety'
                     name='variety'
@@ -81,8 +95,8 @@ function Form({addReview}) {
                 />
             </div>
 
-            <div>
-                <label>Designation</label>
+            <div style={styles.div}>
+                <label style={styles.label}>Designation</label>
                 <input
                     id='designation'
                     name='designation'
@@ -91,8 +105,8 @@ function Form({addReview}) {
                 />
             </div>
 
-            <div>
-                <label>Price</label>
+            <div style={styles.div}>
+                <label style={styles.label}>Price</label>
                 <input
                     id='price'
                     name='price'
@@ -101,8 +115,8 @@ function Form({addReview}) {
                 />
             </div>
 
-            <div>
-                <label>Winery</label>
+            <div style={styles.div}>
+                <label style={styles.label}>Winery</label>
                 <input
                     id='winery'
                     name='winery'
@@ -111,8 +125,8 @@ function Form({addReview}) {
                 />
             </div>
 
-            <div>
-                <label>Taster Name</label>
+            <div style={styles.div}>
+                <label style={styles.label}>Taster Name</label>
                 <input
                     id='tasterName'
                     name='tasterName'
@@ -124,6 +138,14 @@ function Form({addReview}) {
 
             <button
                 type='submit'
+                style={{
+                    cursor: 'pointer',
+                    padding: '10px',
+                    margin: '20px 0 0 0',
+                    width: '20%',
+                    minWidth: '55px',
+                    fontSize: '14px'
+                    }}
                 >
                 Save
             </button>
