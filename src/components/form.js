@@ -96,7 +96,7 @@ function Form({addReview}) {
                 <input
                     id='price'
                     name='price'
-                    type='text'
+                    type='number'
                     onChange={change}
                 />
             </div>

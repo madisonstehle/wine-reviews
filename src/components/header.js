@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 
 
 function Header(props) {
-    console.log(props)
-
     return (
         <header className="App-header">
             <h1

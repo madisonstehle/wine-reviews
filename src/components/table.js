@@ -7,13 +7,32 @@ import useSortData from '../hooks/useSortData.js';
 import '../styles/table.css';
 
 function ReviewTable(props) {
+    const { getReviews } = props;
     const { items, requestSort } = useSortData(props.initReviews);
 
     useEffect( () => {
-        actions.getReviews();
-    }, [items, props.initReviews]);
+        getReviews();
+        // eslint-disable-next-line
+    }, []);
 
     let renderingArr = items ? items : props.initReviews;
+
+    // TODO: dedup countries list from data
+    // let countries = renderingArr.filter((review, position) => {
+    //         return 
+    // })
+
+    // TODO: integrating filtering functionality
+    // let countrySelect = renderingArr.map((review, idx) => {
+    //     const { country } = review;
+    //     return (
+    //         <option
+    //             value={country}
+    //             key={idx}>
+    //             { country }
+    //         </option>
+    //     )
+    // })
 
     let rows = renderingArr.map((review, idx) => {
         const { title, variety, winery, points, price, designation} = review;
@@ -30,57 +49,69 @@ function ReviewTable(props) {
     })
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        <button
-                            type='button'
-                            onClick={ () => requestSort('title')}>
-                            TITLE
-                        </button>
-                    </th>
-                    <th>
-                        <button
-                            type='button'
-                            onClick={ () => requestSort('variety')}>
-                            VARIETY
-                        </button>
-                    </th>
-                    <th>
-                        <button
-                            type='button'
-                            onClick={ () => requestSort('winery')}>
-                            WINERY
-                        </button>                        
-                    </th>
-                    <th>
-                        <button
-                            type='button'
-                            onClick={ () => requestSort('points')}>
-                            POINTS
-                        </button>   
-                    </th>
-                    <th>
-                        <button
-                            type='button'
-                            onClick={ () => requestSort('price')}>
-                            PRICE
-                        </button>  
-                    </th>
-                    <th>
-                        <button
-                            type='button'
-                            onClick={ () => requestSort('designation')}>
-                            DESIGNATION
-                        </button>  
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                { rows }
-            </tbody>
-        </table>
+        <div>
+            {/* <div> */}
+                {/* TODO: Allow Table Filtering through drop down */}
+                {/* <select> */}
+                    {/* <option */}
+                        {/* value='' */}
+                        {/* >--Select a Country-- */}
+                    {/* </option> */}
+                    {/* { countrySelect } */}
+                {/* </select> */}
+            {/* </div> */}
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <button
+                                type='button'
+                                onClick={ () => requestSort('title')}>
+                                TITLE
+                            </button>
+                        </th>
+                        <th>
+                            <button
+                                type='button'
+                                onClick={ () => requestSort('variety')}>
+                                VARIETY
+                            </button>
+                        </th>
+                        <th>
+                            <button
+                                type='button'
+                                onClick={ () => requestSort('winery')}>
+                                WINERY
+                            </button>                        
+                        </th>
+                        <th>
+                            <button
+                                type='button'
+                                onClick={ () => requestSort('points')}>
+                                POINTS
+                            </button>   
+                        </th>
+                        <th>
+                            <button
+                                type='button'
+                                onClick={ () => requestSort('price')}>
+                                PRICE
+                            </button>  
+                        </th>
+                        <th>
+                            <button
+                                type='button'
+                                onClick={ () => requestSort('designation')}>
+                                DESIGNATION
+                            </button>  
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    { rows }
+                </tbody>
+            </table>
+        </div>
     )
 }
 

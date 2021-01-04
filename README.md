@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Wine-Reviews
+## Madison Stehle (5:25pm - 9:25pm)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Application Links
+- [Deployed Site]()
+- [Github Respository]()
 
-In the project directory, you can run:
 
-### `npm start`
+### With More Time...
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If given longer to implement this application, I would:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Complete the "filter by countries of origin" feature. The current drop down (commented out in the code) has no functionality aside from displaying a list of countries associated with the listed wine reviews. I would likely need to deduplicate the country list. Judging by the wireframe, I would also need to do a mathmatical operation to determine the percentage of wines reviewed for each country. Completing this feature would also mean adjusting the "total number of reviews" number.
+2. Add a feature to view and filter number of results viewed on the table page, and a pagination feature for the table as displayed in the wireframe. 
+3. More effectively style the application. The responsiveness could improve. I would better consolidate the CSS styling into the _styles_ directory, and modularize the parts there. I would also implement a CSS reset file to give a clean baseline to work from. 
+4. Allow the submitted form data to persist through reload by using a post route with axios.
+5. Clean up the code by modularizing in a more sensical way, add appropriate documentation, and ensure there are no eslint fixes needed.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Testing
 
-### `npm run build`
+Using Enzyme and Jest, I would verify that the prop functions are being called when events are dispatched and that the renderings of a given state match a snapshot. I would also want to test that a component's children match the expected.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Because our user interface is a priority, I would use snapshot tests on the table, form, and modal, specifically, to make sure that the layout stays consistent and doesn't change unexpectedly with a change in state or screen size.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Unit tests could be performed on the functions making api calls, changing the state, sorting the table data, and handling the form data to ensure that these functions behave as we expect. It would be good to feed edge cases (such as non-normalized data, empty fields, etc.) into these unit tests to make sure that the data is being handled.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Component tests are still valuable here, even given that it is a single-page application. I would use a component test to check that the form and the table are working together, and that the "total number of reviews" data from the header would be feeding from the numbers in the table.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Credits
+- [Sorting Table Data Hook](https://www.smashingmagazine.com/2020/03/sortable-tables-react/) by Kristofer Selbekk 
+- [React Modal](https://dev.to/adeyemiadekore2/how-to-build-a-reusable-and-responsive-modal-in-react-from-scratch-1o0f) by korey

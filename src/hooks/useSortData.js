@@ -7,9 +7,7 @@ const useSortData = (items, config = null) => {
 
     const sortedRecords = useMemo(() => {
         let sortableItems = [...items];
-        console.log('SORTCONFIG SET', sortConfig);
-        console.log('SORTABLE ITEMS', sortableItems);
-
+        
         if ( sortConfig !== null ) {
             sortableItems.sort((a, b) => {
                 if ( a[sortConfig.key] < b[sortConfig.key] ) {
